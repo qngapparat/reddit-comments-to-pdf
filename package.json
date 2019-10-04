@@ -1,0 +1,22 @@
+{
+  "name": "scrape-heroku",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "json2md": "^1.6.5",
+    "morgan": "~1.9.0",
+    "node-fetch": "^2.6.0",
+    "phantom-html-to-pdf": "^0.6.0",
+    "remarkable": "^2.0.0"
+  },
+  "description": "Put 1000 comments of Reddit user into PDF",
+  "main": "app.js",
+  "author": "qng",
+  "license": "ISC"
+}

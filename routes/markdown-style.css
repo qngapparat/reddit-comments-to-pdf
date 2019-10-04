@@ -1,0 +1,13 @@
+.head {
+  font-size: 1.35em!important;
+}
+
+.meta {
+  font-size: 1.25em!important;
+  color: rgb(128, 128, 128);
+}
+
+.post {
+  font-size: 1.4em!important;
+  line-height: 155%;
+}
