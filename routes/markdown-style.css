@@ -1,13 +1,19 @@
+@import url(//fonts.googleapis.com/css?family=Open+Sans);
+
 .head {
   font-size: 1.35em!important;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .meta {
   font-size: 1.25em!important;
   color: rgb(128, 128, 128);
+  font-family: 'Open Sans', sans-serif;
 }
 
 .post {
   font-size: 1.4em!important;
   line-height: 155%;
+  font-family: 'Open Sans', sans-serif;
 }
+

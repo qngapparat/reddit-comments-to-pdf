@@ -1,8 +1,45 @@
 <html>
-  <body>
-    click here to download pdf: 
-    <button onClick="">
-      click
-    </button>
-  </body>
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="stylesheets/style.css" rel="stylesheet">
+
+  <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule="" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
+
+</head>
+
+<body>
+  <div class="all">
+    <div class="navbar">
+      <a href="https://github.com/8401754430/reddit-contributions-to-pdf">
+        <image src="./images/GitHub-Mark-64px.png" class="github-logo" />
+      </a>
+    </div>
+    <div class="main">
+      <div class="header">
+        <h1>Reddit Comments to PDF</h1>
+        <div class="hint">
+          This app puts the 1000 most recent comments of a Reddit author into a neat PDF.
+          <br />
+          The code is open source.
+        </div>
+      </div>
+      <form id="author-form">
+        <input type="text" name="author_input" id="author-input" placeholder="Enter a user name..." autocomplete="off" autofocus>
+        <a href="#" id="download-button">
+          <ion-icon name="download">
+        </a>
+        </ion-icon>
+      </form>
+      <div class="hint">
+        Please allow up to 10 seconds for processing.
+      </div>
+    </div>
+  </div>
+
+  <script src="javascripts/index.js"></script>
+
+</body>
+
 </html>

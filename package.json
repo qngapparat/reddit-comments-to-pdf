@@ -18,5 +18,8 @@
   "description": "Put 1000 comments of Reddit user into PDF",
   "main": "app.js",
   "author": "qng",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.19.3"
+  }
 }

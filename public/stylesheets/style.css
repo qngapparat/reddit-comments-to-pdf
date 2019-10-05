@@ -1,8 +1,78 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Open Sans", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+.all {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.header {
+  text-align: center;
+}
+
+#author-form {
+  flex:1;
+  display:flex;
+  justify-content: center;
+  align-self: center;
+  align-items: flex-start;
+  margin: 3em;
+}
+
+#author-input, #author-input:focus {
+  height: 3rem;
+  padding: 2.4rem 1.3rem;
+  box-shadow: 1px 10px 30px 0 rgba(54, 54, 54, 0.15);
+  border: none;
+  outline: none;
+  font-size: 1.3rem;
+  color: #383838;
+  border-radius: 0.6em;
+  border: 1px solid rgb(238, 238, 238);
+
+}
+
+.hint {
+  color: #797979;
+  text-align: center;
+  font-size: 1.1em;
+  line-height: 180%
+}
+
+ion-icon {
+  color: rgb(128, 128, 128);
+  font-size: 2.2em;
+  margin: 1em;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.github-logo {
+  height: 3rem;
+  opacity: 0.15;
+}
+
+.github-logo:focus, .github-logo:hover {
+  opacity: 0.25;
+  cursor: pointer
 }

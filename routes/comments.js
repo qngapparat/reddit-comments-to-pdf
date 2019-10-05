@@ -29,8 +29,11 @@ function JSONtoMD(post){
   const formatted = [
       { head: post.permalink },
       { meta: `${post.author} | ${ dateStr }`},
-      { post: post.body
-          .replace(/-\n/g, "\n") 
+      { post: json2md(post.body
+          .replace(/-\n/g, "\n")
+          .replace(/[“”]/g,"\"")
+          .replace(/’/g, "'")
+          )
       }
   ]
   return json2md(formatted)
@@ -54,6 +57,10 @@ function HTMLtoPDF2(html, fname, resp){
         resp.status(500).send("<h1>Oops!</h1>");
         return;
       }
+      resp.writeHead(200, {
+        "Content-Type": "application/pdf",
+        "Content-Disposition": `inline; filename=${ fname }`
+      })
       pdf.stream.pipe(resp)
     })
 }
