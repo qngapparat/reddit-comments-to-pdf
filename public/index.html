@@ -1,45 +1,60 @@
 <html>
-
 <head>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
   <link href="stylesheets/style.css" rel="stylesheet">
-
-  <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule="" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
-
 </head>
 
 <body>
-  <div class="all">
-    <div class="navbar">
-      <a href="https://github.com/qngapparat/reddit-comments-to-pdf">
-        <image src="./images/GitHub-Mark-64px.png" class="github-logo" />
-      </a>
+
+  <!-- Main content -->
+  <div style="display:flex;flex-direction:column;justify-content: center;align-items: center; height: 95%;">
+    <!-- Headline-->
+    <div style="display:flex;">
+      <h1>Reddit &nbsp;</h1>
+      <div id="toggletext-box">
+        <h1>
+          <div id="toggletext">Comments</div>
+        </h1>
+      </div>
+      <h1>&nbsp; to PDF</h1>
     </div>
-    <div class="main">
-      <div class="header">
-        <h1>Reddit Comments to PDF</h1>
-        <div class="hint">
-          This app puts the 1000 most recent comments of a Reddit author into a neat PDF.
-          <br />
-          The code is open source.
-        </div>
+
+    <!-- Text input -->
+    <form id="author-form" class="input-group input-group-lg">
+      <div>
+        <input type="text" id="author-input" spellcheck="false" autocomplete="false" autofocus
+          placeholder="Type a username...">
       </div>
-      <form id="author-form">
-        <input type="text" name="author_input" id="author-input" placeholder="Enter a user name..." autocomplete="off" autofocus>
-        <a href="#" id="download-button">
-          <ion-icon name="download">
-        </a>
-        </ion-icon>
-      </form>
-      <div class="hint">
-        Please allow up to 10 seconds for processing.
-      </div>
+    </form>
+
+    <!-- Hint and Spinner -->
+    <div id="hint">
+      Allow up to 10 seconds for processing
     </div>
   </div>
 
-  <script src="javascripts/index.js"></script>
+  <!-- GitHub avatar-->
+  <div style="text-align: center;">
+    <a href="https://github.com/qngapparat/reddit-comments-to-pdf">
+      <div style="display:inline-block">
+        <img src="https://avatars.githubusercontent.com/qngapparat" class="github-avatar">
+        &nbsp; GitHub
+      </div>
+    </a>
+  </div>
 
+  <script src="javascripts/index.js"></script>
 </body>
 
 </html>

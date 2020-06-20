@@ -29,7 +29,7 @@ function JSONtoMD(post){
   const formatted = [
       { head: post.permalink },
       { meta: `${post.author} | ${ dateStr }`},
-      { post: json2md(post.body
+      { post: json2md(post.body // replace special quotes with '
           .replace(/-\n/g, "\n")
           .replace(/[“”]/g,"\"")
           .replace(/’/g, "'")
@@ -51,7 +51,7 @@ function MDtoHTML(md) {
     .render(md)
 }
 
-function HTMLtoPDF2(html, fname, resp){
+function HTMLtoPDFAndSend(html, fname, resp){
     conversion({ html: html }, (err, pdf) => {
       if(err){
         resp.status(500).send("<h1>Oops!</h1>");
@@ -65,6 +65,8 @@ function HTMLtoPDF2(html, fname, resp){
     })
 }
 
+// Main
+
 router.get('/', function(req, resp, next) {
   if(!req.query.author){
     resp.status(400).send("Must specify author")
@@ -77,8 +79,8 @@ router.get('/', function(req, resp, next) {
     .then(json => json.data)
     .then(CommentsJSONtoMD)
     .then(MDtoHTML)
-    .then(html => `<style>${ mdStyle }</style>` + html)
-    .then(html => HTMLtoPDF2(html, fname, resp))
+    .then(html => `<style>${ mdStyle }</style>` + html) // prepend stylesheet
+    .then(html => HTMLtoPDFAndSend(html, fname, resp)) 
     .catch(e => { 
       resp.status(500).send("<h1>Oops! Something went wrong on our side</h1>");
     })

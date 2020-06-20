@@ -1,14 +1,30 @@
 
+var mode = 'comments' // or 'Posts'
+
 var onSubmit = function(ev) {
   const authorName = document.getElementById('author-input').value;
   ev.preventDefault()
-  window.location.href = `/comments?author=${ authorName }`
+  document.getElementById('hint').innerHTML = '<div class="loader">ewg</div>'
+  window.location.href = mode === 'comments' 
+    ? `/comments?author=${ authorName }`
+    : `/posts?author=${ authorName }`
 }
 
-var form = document.getElementById('author-form')
-form.addEventListener('submit', onSubmit, true)
+var onModeToggle = function(ev) {
+  if(mode == 'comments'){
+    mode = 'posts'
+    document.getElementById('toggletext').innerHTML = 'Posts'
+  } 
+  else {
+    mode = 'comments'
+    document.getElementById('toggletext').innerHTML = 'Comments'
+  }
+}
 
-var dlbutton = document.getElementById('download-button')
-dlbutton.addEventListener('click', onSubmit, true)
+document
+ .getElementById('author-form')
+ .addEventListener('submit', onSubmit, true)
 
-console.log("💊💊💊")
+document 
+  .getElementById('toggletext-box')
+  .addEventListener('click', onModeToggle, true)
