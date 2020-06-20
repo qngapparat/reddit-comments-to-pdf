@@ -4,7 +4,7 @@ Grab all comments of a Reddit author as neat PDF.
 
 ### Try it out
 
-https://dry-plains-46791.herokuapp.com/
+https://ancient-beyond-10842.herokuapp.com/
 
 ### License
 
